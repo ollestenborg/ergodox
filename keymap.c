@@ -1,4 +1,4 @@
-include "ergodox_ez.h"
+#include "ergodox_ez.h"
 #include "debug.h"
 #include "action_layer.h"
 
@@ -9,6 +9,8 @@ include "ergodox_ez.h"
 #define DVORAKRIGHT 4 // media keys
 #define NUM 5 // media keys
 #define OPERATORS 6 // media keys
+#define DOTS 7 // media keys
+#define SNIP 8 // media keys
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 /* Keymap 0: Basic layer
@@ -38,7 +40,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         // left hand
         KC_EQL,         KC_1,         KC_2,   KC_3,   KC_4,   KC_5,   KC_LEFT,
         KC_DELT,        KC_Q,         KC_W,   KC_E,   KC_P,   KC_Y,   TG(SYMB),
-        KC_LALT,        LT(NUM,KC_A), LT(OPERATORS,KC_O),    KC_E,   KC_U,   KC_I,
+        KC_LALT,        LT(NUM,KC_A), LT(OPERATORS,KC_O),    LT(DOTS,KC_E), LT(SNIP, KC_U),   KC_I,
         KC_LSFT,        CTL_T(KC_Z), KC_Q,    KC_J,   KC_K,   KC_X, ALL_T(KC_NO),
         LT(SYMB,KC_GRV),KC_QUOT,      LALT(KC_LSFT),  KC_LEFT,KC_RGHT,
                                               ALT_T(KC_APP),  KC_LGUI,
@@ -47,7 +49,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         // right hand
              KC_RGHT,     KC_6,   KC_7,   KC_8,   KC_9,   KC_0,             KC_MINS,
              TG(SYMB),    KC_F,   KC_G,   KC_C,   KC_R,   KC_L,             KC_BSLS,
-                          LT(SYMB, KC_D),  LT(SYMB, KC_H), ALT_T(KC_T), CTL_T(KC_N) , MT(MOD_LSFT,KC_S),GUI_T(KC_QUOT),
+                          LT(SYMB, KC_D),  LT(SYMB, KC_H), CTL_T(KC_T), ALT_T(KC_N) , MT(MOD_LSFT,KC_S),GUI_T(KC_QUOT),
              MEH_T(KC_NO),KC_B,   KC_M,   KC_W,KC_V,LT(KC_RSFT,KC_Z),   KC_RSFT,
                                   KC_DOWN,  KC_UP,KC_LBRC,KC_RBRC,          KC_FN1,
              KC_LALT,        CTL_T(KC_ESC),
@@ -183,7 +185,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	        // left hand
         KC_EQL,         KC_1,           KC_2,    KC_3,   KC_4,   KC_5,   KC_WBAK,
         KC_ESC,         KC_L,        KC_G, KC_C, KC_G,   KC_F,   KC_DELT,
-        KC_LALT,        LT(NUM,KC_A), LT(OPERATORS,KC_O),    KC_E,   KC_U,   KC_I,
+        KC_LALT,        LT(NUM,KC_A), LT(OPERATORS,KC_O),    LT(DOTS,KC_E), LT(SNIP, KC_U),   KC_I,
         KC_LSFT,        CTL_T(KC_Z), KC_V,    KC_W,   KC_M,   KC_B,   ALL_T(KC_NO),
         LT(SYMB,KC_GRV),KC_LALT,      KC_LGUI,  KC_LEFT,KC_RGHT,
                                               CTL_T(KC_APP),  TG(1),
@@ -191,9 +193,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                                KC_SPC,KC_TAB,KC_END,
         // right hand
              KC_RGHT,     KC_6,   KC_7,   KC_8,   KC_9,   KC_0,             KC_MINS,
-             TG(SYMB),    KC_Y,   KC_4,   KC_5,   KC_6,   KC_P,             KC_BSLS,
-                          KC_H,  KC_1, KC_2, KC_3,   LT(MDIA, KC_SCLN),GUI_T(KC_QUOT),
-             MEH_T(KC_NO),KC_N,   KC_7,   KC_8,KC_9,LT(KC_RSFT,KC_L),   KC_RSFT,
+             TG(SYMB),    KC_Y,   KC_5,   KC_6,   KC_7,   KC_8,             KC_BSLS,
+                          KC_H,  KC_1, KC_2, KC_3, KC_4,GUI_T(KC_QUOT),
+             MEH_T(KC_NO),KC_N,   KC_9,   KC_8,KC_9,KC_0,   KC_RSFT,
                                   KC_DOWN,  KC_UP,KC_LBRC,KC_RBRC,          KC_FN1,
              KC_LALT,        CTL_T(KC_ESC),
              KC_PGUP,
@@ -203,7 +205,48 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	        // left hand
         KC_EQL,         KC_1,           KC_2,    KC_3,   KC_4,   KC_5,   KC_WBAK,
         KC_ESC,         KC_SLASH,        KC_PPLS, KC_EQL, KC_G,   KC_F,   KC_DELT,
-        KC_LALT,        LT(NUM,KC_A), LT(OPERATORS,KC_O),    KC_E,   KC_U,   KC_I,
+        KC_LALT,        LT(NUM,KC_A), LT(OPERATORS,KC_O),    LT(DOTS,KC_E), LT(SNIP, KC_U),   KC_I,
+        KC_LSFT,        CTL_T(KC_Z), KC_V,    KC_W,   KC_M,   KC_B,   ALL_T(KC_NO),
+        LT(SYMB,KC_GRV),KC_LALT,      KC_LGUI,  KC_LEFT,KC_RGHT,
+                                              CTL_T(KC_APP),  TG(1),
+                                                              KC_HOME,
+                                               KC_SPC,KC_TAB,KC_END,
+        // right hand
+             KC_RGHT,     KC_6,   KC_7,   KC_8,   KC_9,   KC_0,             KC_MINS,
+             TG(SYMB),    KC_KP_ASTERISK,   KC_PPLS,   KC_BSLASH,   KC_KP_ASTERISK,   KC_GRAVE,             KC_BSLS,
+                          KC_KP_SLASH,  KC_KP_MINUS, KC_KP_SLASH, KC_PERC,   KC_EQUAL,GUI_T(KC_QUOT),
+             MEH_T(KC_NO),KC_N,   KC_M,   KC_COMM,KC_DOT,LT(KC_RSFT,KC_L),   KC_RSFT,
+                                  KC_DOWN,  KC_UP,KC_LBRC,KC_RBRC,          KC_FN1,
+             KC_LALT,        CTL_T(KC_ESC),
+             KC_PGUP,
+             KC_PGDN,KC_TAB, KC_ENT
+    ),
+[DOTS] = KEYMAP(  // layer 0 : default
+	        // left hand
+        KC_EQL,         KC_1,           KC_2,    KC_3,   KC_4,   KC_5,   KC_WBAK,
+        KC_ESC,         KC_SLASH,        KC_PPLS, KC_EQL, KC_G,   KC_F,   KC_DELT,
+        KC_LALT,        LT(NUM,KC_A), LT(OPERATORS,KC_O),    LT(DOTS,KC_E), LT(SNIP, KC_U),   KC_I,
+        KC_LSFT,        CTL_T(KC_Z), KC_V,    KC_W,   KC_M,   KC_B,   ALL_T(KC_NO),
+        LT(SYMB,KC_GRV),KC_LALT,      KC_LGUI,  KC_LEFT,KC_RGHT,
+                                              CTL_T(KC_APP),  TG(1),
+                                                              KC_HOME,
+                                               KC_SPC,KC_TAB,KC_END,
+        // right hand
+             KC_RGHT,     KC_6,   KC_7,   KC_8,   KC_9,   KC_0,             KC_MINS,
+             TG(SYMB),    KC_KP_ASTERISK,   KC_COMMA,   KC_SCOLON,   KC_O,   KC_P,             KC_BSLS,
+                          KC_KP_SLASH,  KC_DOT, KC_COLON, KC_SLSH ,   KC_QUOTE,GUI_T(KC_QUOT),
+             MEH_T(KC_NO),KC_N,   KC_M,   KC_COMM,KC_DOT,LT(KC_RSFT,KC_L),   KC_RSFT,
+                                  KC_DOWN,  KC_UP,KC_LBRC,KC_RBRC,          KC_FN1,
+             KC_LALT,        CTL_T(KC_ESC),
+             KC_PGUP,
+             KC_PGDN,KC_TAB, KC_ENT
+    ),
+[SNIP] = KEYMAP(  // layer 0 : default
+		
+	        // left hand
+        KC_EQL,         KC_1,           KC_2,    KC_3,   KC_4,   KC_5,   KC_WBAK,
+        KC_ESC,         KC_SLASH,        KC_PPLS, KC_EQL, KC_G,   KC_F,   KC_DELT,
+        KC_LALT,        LT(NUM,KC_A), LT(OPERATORS,KC_O),    LT(DOTS,KC_E), LT(SNIP, KC_U),   KC_I,
         KC_LSFT,        CTL_T(KC_Z), KC_V,    KC_W,   KC_M,   KC_B,   ALL_T(KC_NO),
         LT(SYMB,KC_GRV),KC_LALT,      KC_LGUI,  KC_LEFT,KC_RGHT,
                                               CTL_T(KC_APP),  TG(1),
