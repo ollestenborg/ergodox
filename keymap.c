@@ -303,8 +303,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                                KC_SPC,KC_TAB,KC_END,
         // right hand
              KC_RGHT,     KC_6,   KC_7,   KC_8,   KC_9,   KC_0,             KC_MINS,
-	     TG(SYMB),    KC_KP_ASTERISK,  KC_COLON , KC_SCLN  ,   KC_EXLM,   LSFT(KC_QUOT),             KC_BSLS,
-                         KC_DEL, KC_ESC, KC_INS,    KC_ENTER, KC_TAB,  KC_UNDO,
+	     TG(SYMB),    KC_KP_ASTERISK,  KC_INS, KC_UNDO,   KC_EXLM,   LSFT(KC_QUOT),             KC_BSLS,
+                         KC_DEL, KC_ESC, ,    KC_ENTER, KC_TAB, KC_FN12 ,
              MEH_T(KC_NO),KC_N, LSFT(KC_MINUS), KC_PIPE,KC_DOT,LT(KC_RSFT,KC_L),   KC_RSFT,
                                   KC_DOWN,  KC_UP,KC_LBRC,KC_RBRC,          KC_FN1,
              KC_LALT,        CTL_T(KC_ESC),
