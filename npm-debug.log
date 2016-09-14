@@ -5,7 +5,7 @@
 4 verbose stack Error: ENOENT: no such file or directory, open '/home/dor/myr/it/software/qmk_firmware/keyboards/ergodox_ez/keymaps/default/package.json'
 4 verbose stack     at Error (native)
 5 verbose cwd /home/dor/myr/it/software/qmk_firmware/keyboards/ergodox_ez/keymaps/default
-6 error Linux 4.4.0-34-generic
+6 error Linux 4.4.0-36-generic
 7 error argv "/usr/bin/nodejs" "/usr/bin/npm" "run" "client:start:watch"
 8 error node v4.2.6
 9 error npm  v3.5.2
