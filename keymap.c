@@ -17,7 +17,7 @@
 #define VOCON 12 // media keys
 #define DIRECTION 13 // media keys
 #define WINAV 14 // media keys
-#define FUN 15 // media keys
+#define APPFUN 15 // media keys
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 /* Keymap 0: Basic layer
@@ -58,7 +58,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         // right hand
              KC_RGHT,     KC_6,   KC_7,   KC_8,   KC_9,   KC_0,             KC_MINS,
              TG(SYMB),    KC_C,   KC_L,   KC_C,   KC_V,   KC_M,             KC_RALT,
-	     LT(SYMB, KC_K),  LT(STOPCON, KC_R), LT(SYMB, KC_S), KC_F , LT(SNIP,KC_N),KC_RSFT,
+	     LT(SYMB, KC_K),  LT(STOPCON, KC_R), LT(SYMB, KC_S),LT(APPFUN, KC_F) , LT(SNIP,KC_N),KC_RSFT,
              MEH_T(KC_NO),KC_B,   KC_H,   KC_Z,KC_W,KC_LCTL,   KC_RSFT,
                                   KC_DOWN,  KC_UP,KC_LBRC,KC_RBRC,          KC_FN1,
              KC_LALT,        CTL_T(KC_ESC),
@@ -221,10 +221,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                                               KC_HOME,
                                                KC_SPC,,KC_END,
         // right hand
-             KC_RGHT,     KC_6,   KC_HOME,   KC_8,   KC_9,   KC_0,             KC_MINS,
-             TG(SYMB),    KC_Y,   KC_HOME,   KC_UP,   KC_PGUP,   KC_8,             KC_BSLS,
-                          RCTL(KC_LEFT),  KC_LEFT, KC_DOWN, KC_RIGHT, RCTL(KC_RIGHT),GUI_T(KC_QUOT),
-             MEH_T(KC_NO),KC_N,   KC_END,   KC_DOWN,KC_PGDN,RCTL(KC_RIGHT),   KC_RSFT,
+             KC_RGHT,     KC_6,   KC_HOME,   KC_8, KC_9,   KC_0,             KC_MINS,
+             TG(SYMB),    KC_Y,   KC_HOME,   KC_UP, KC_END ,  KC_PGUP,             KC_BSLS,
+                          RCTL(KC_LEFT),  KC_LEFT, KC_DOWN, KC_RIGHT,KC_PGDN ,GUI_T(KC_QUOT),
+             MEH_T(KC_NO),KC_N,   KC_END,   RCTL(KC_RIGHT),KC_PGDN,RCTL(KC_RIGHT),   KC_RSFT,
                                   KC_DOWN,  KC_UP,KC_LBRC,KC_RBRC,          KC_FN1,
              KC_LALT,        CTL_T(KC_ESC),
              KC_PGUP,
@@ -304,7 +304,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         // right hand
              KC_RGHT,     KC_6,   KC_7,   KC_8,   KC_9,   KC_0,             KC_MINS,
 	     TG(SYMB),    KC_KP_ASTERISK,  KC_INS, KC_UNDO,   KC_EXLM,   LSFT(KC_QUOT),             KC_BSLS,
-                         KC_DEL, KC_ESC, KC_INS,    KC_ENTER, KC_TAB,  KC_UNDO,
+                         KC_DEL, KC_ESC, KC_DELT,    KC_ENTER, KC_TAB,  KC_UNDO,
              MEH_T(KC_NO),KC_N, LSFT(KC_MINUS), KC_PIPE,KC_DOT,LT(KC_RSFT,KC_L),   KC_RSFT,
                                   KC_DOWN,  KC_UP,KC_LBRC,KC_RBRC,          KC_FN1,
              KC_LALT,        CTL_T(KC_ESC),
@@ -371,6 +371,26 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
              KC_PGUP,
              KC_PGDN,KC_TAB, KC_ENT
     ),
+[APPFUN] = KEYMAP(  // layer 0 : default
+	        // left hand
+        KC_EQL,         KC_Q,        KC_2,    KC_T,     KC_4,   KC_5,   KC_WBAK,
+        KC_ESC,         KC_F5,        KC_F6,    KC_F7,     KC_F8,   KC_F,   KC_DELT,
+        KC_LALT,        KC_FN1,        KC_FN2,    KC_FN3,     KC_FN4,   KC_T,
+        KC_LSFT,        KC_F9,        KC_F10,    KC_F11,     KC_F12,   KC_B,   ALL_T(KC_NO),
+        LT(SYMB,KC_GRV),KC_X,      KC_LGUI,  KC_LEFT,KC_RGHT,
+                                              CTL_T(KC_APP),  TG(1),
+                                                              KC_HOME,
+                                               KC_SPC,KC_TAB,KC_END,
+        // right hand
+             KC_RGHT,     KC_6,   KC_7,   KC_8,   KC_9,   KC_0,             KC_MINS,
+	     TG(SYMB),    KC_KP_ASTERISK,  KC_COLON , KC_SCLN  ,   KC_EXLM,   LSFT(KC_QUOT),             KC_BSLS,
+                          LT(SYMB, KC_D),  LT(STOPCON, KC_H), LT(SYMB, KC_H), LT(APPFUN, KC_H) , MT(MOD_LSFT,KC_SCOLON),GUI_T(KC_QUOT),
+             MEH_T(KC_NO),KC_N, LSFT(KC_MINUS), KC_PIPE,KC_DOT,LT(KC_RSFT,KC_L),   KC_RSFT,
+                                  KC_DOWN,  KC_UP,KC_LBRC,KC_RBRC,          KC_FN1,
+             KC_LALT,        CTL_T(KC_ESC),
+             KC_PGUP,
+             KC_PGDN,KC_TAB, KC_ENT
+    )
 };
 
 const uint16_t PROGMEM fn_actions[] = {
