@@ -49,7 +49,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         // left hand
         KC_EQL,         KC_1,         KC_2,   KC_3,   KC_4,   KC_5,   KC_LEFT,
         KC_DELT,        CTL_T(KC_F1),         CTL_T(KC_F2),KC_U ,  KC_Y,   KC_D,   TG(SYMB),
-        KC_LALT,        LT(NUM,KC_A), LT(OPERATORS,KC_E),    LT(DOTS,KC_O), LT(DIRECTION, KC_I),   LT(ACTION,KC_T),
+        KC_LSFT,        LT(NUM,KC_A), LT(OPERATORS,KC_E),    LT(DOTS,KC_O), LT(DIRECTION, KC_I),   LT(ACTION,KC_T),
         KC_LSFT,        CTL_T(KC_Z), KC_Q,    KC_J,   KC_J,   KC_J, ALL_T(KC_NO),
         LT(SYMB,KC_GRV),KC_QUOT,      LALT(KC_LSFT),  KC_LEFT,KC_LALT,
                                               ALT_T(KC_APP),  KC_LGUI,
@@ -92,7 +92,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
        M(0),   KC_F1,  KC_F2,  KC_F3,  KC_F4,  KC_F5,  KC_TRNS,
        KC_TRNS,LSFT(KC_COMMA),LSFT(KC_DOT),  KC_LCBR,KC_RCBR,KC_PIPE,KC_TRNS,
        KC_TRNS,KC_HASH,KC_DLR, KC_LPRN,KC_RPRN,KC_GRV,
-       KC_TRNS,KC_PERC,KC_CIRC,KC_LBRC,KC_RBRC,KC_TILD,KC_TRNS,
+       KC_TRNS,LSFT(KC_2),KC_CIRC,KC_LBRC,KC_RBRC,KC_TILD,KC_TRNS,
        KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,
                                        KC_TRNS,KC_TRNS,
                                                KC_TRNS,
@@ -375,7 +375,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	        // left hand
         KC_EQL,         KC_Q,        KC_2,    KC_T,     KC_4,   KC_5,   KC_WBAK,
         KC_ESC,         KC_F5,        KC_F6,    KC_F7,     KC_F8,   KC_F,   KC_DELT,
-        KC_LALT,        KC_FN1,        KC_FN2,    KC_FN3,     KC_FN4,   KC_T,
+        KC_LALT,        KC_F1,        KC_F2,    KC_F3,     KC_F4,   KC_T,
         KC_LSFT,        KC_F9,        KC_F10,    KC_F11,     KC_F12,   KC_B,   ALL_T(KC_NO),
         LT(SYMB,KC_GRV),KC_X,      KC_LGUI,  KC_LEFT,KC_RGHT,
                                               CTL_T(KC_APP),  TG(1),
