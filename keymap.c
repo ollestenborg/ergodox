@@ -16,8 +16,9 @@
 #define STOPCON 11 // media keys
 #define VOCON 12 // media keys
 #define DIRECTION 13 // media keys
-#define WINAV 14 // media keys
+#define WINAV 14 6/ media keys
 #define APPFUN 15 // media keys
+#define SPECIAL 16 // media keys
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 /* Keymap 0: Basic layer
@@ -45,13 +46,33 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 */
 // If it accepts an argument (i.e, is a function), it doesn't need KC_.
 // Otherwise, it needs KC_*
+[SPECIAL] = KEYMAP(  // layer 0 : default
+        // left hand
+        KC_EQL,         KC_1,         KC_2,   KC_3,   KC_4,   KC_5,   KC_LEFT,
+        KC_DELT,        KC_Q,         KC_W, KC_E,  KC_R,   KC_T,   TG(SPECIAL),
+        KC_LSFT,        LT(NUM,KC_A), LT(OPERATORS,KC_S), LT(DOTS,KC_D), LT(DIRECTION, KC_F),   LT(ACTION,KC_G),
+        KC_LSFT,        CTL_T(KC_Z), KC_X,    KC_C,   KC_V,   KC_B, KC_B,
+        LT(SYMB,KC_GRV),KC_QUOT,      LALT(KC_LSFT),  KC_LEFT,KC_LALT,
+                                              ALT_T(KC_APP),  KC_LGUI,
+                                                              KC_HOME,
+                                               KC_SPC,KC_BSPC,KC_END,
+        // right hand
+             KC_RGHT,     KC_6,   KC_7,   KC_8,   KC_9,   KC_0,             KC_MINS,
+             TG(SYMB),    KC_Y,   KC_U,   KC_I,   KC_O,   KC_P,             KC_RALT,
+	     LT(SYMB, KC_H),  LT(STOPCON, KC_J), LT(SYMB, KC_K),LT(APPFUN, KC_L) , LT(SNIP,KC_N),KC_RSFT,
+             MEH_T(KC_NO),KC_N,   KC_M,   KC_Z,KC_W,KC_LCTL,   KC_RSFT,
+                                  KC_DOWN,  KC_UP,KC_LBRC,KC_RBRC,          KC_FN1,
+             KC_LALT,        CTL_T(KC_ESC),
+             KC_PGUP,
+             KC_PGDN,KC_TAB, KC_ENT
+    ),
 [BASE] = KEYMAP(  // layer 0 : default
         // left hand
         KC_EQL,         KC_1,         KC_2,   KC_3,   KC_4,   KC_5,   KC_LEFT,
-        KC_DELT,        CTL_T(KC_F1),         CTL_T(KC_E),KC_U ,  KC_Y,   KC_D,   TG(SYMB),
+        KC_DELT,        CTL_T(KC_F1),         CTL_T(KC_E),KC_U ,  KC_Y,   KC_D,   TG(BASE),
         KC_LSFT,        LT(NUM,KC_ESC), LT(OPERATORS,KC_A),    LT(DOTS,KC_O), LT(DIRECTION, KC_I),   LT(ACTION,KC_T),
-        KC_LSFT,        CTL_T(KC_Z), KC_Q,    KC_J,   KC_U,   KC_J, ALL_T(KC_NO),
-        LT(SYMB,KC_GRV),KC_QUOT,      LALT(KC_LSFT),  KC_LEFT,KC_LALT,
+        KC_LSFT,        CTL_T(KC_Z), KC_Q,    KC_U, KC_J,KC_J,KC_J,
+	LT(SYMB,KC_GRV),KC_QUOT,      LALT(KC_LSFT),  KC_LEFT,KC_LALT,
                                               ALT_T(KC_APP),  KC_LGUI,
                                                               KC_HOME,
                                                KC_SPC,KC_BSPC,KC_END,
@@ -63,7 +84,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                   KC_DOWN,  KC_UP,KC_LBRC,KC_RBRC,          KC_FN1,
              KC_LALT,        CTL_T(KC_ESC),
              KC_PGUP,
-             KC_PGDN,KC_TAB, KC_ENT
+             KC_CAPS,KC_TAB, KC_ENT
     ),
 /* Keymap 1: Symbol Layer
  *
